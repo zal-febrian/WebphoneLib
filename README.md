@@ -32,7 +32,7 @@ Add the following to `demo/config.mjs`
 export const authorizationUserId = <your-voip-account-id>;
 export const password = '<your-voip-password>';
 export const yourPlatformURL = '<your-platform-url>';
-export const yourPlatformHost = '<your-platform-host>';
+export const yourWebsocketUrl = '<your-websocket-url>';
 ```
 
 Run the demo-server:
@@ -225,14 +225,14 @@ PASSWORD_A = <password-user-a>
 PASSWORD_B = <password-user-b>
 NUMBER_A = <number-user-a>
 NUMBER_B = <number-user-b>
-PLATFORM_HOST = <your-platform-host>
+WEBSOCKET_URL = <your-websocket-url>
 PLATFORM_URL = <your-platform-url>
 ```
 
 Or if you don't want to use a .env file you could pass your configuration to the docker container:
 
 ```bash
-docker run -it --network host -v $PWD:/home/pptruser -w /home/pptruser -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -e USER_A='<user-a>' -e USER_B='<user-b>' -e PASSWORD_A='<password-user-a>' -e PASSWORD_B='<password-user-b>' -e NUMBER_A='<number-user-a>' -e NUMBER_B='<number-user-b>' -e PLATFORM_HOST='<your-platform-host>' -e PLATFORM_URL= '<your-platform-url>' puppeteer-tests
+docker run -it --network host -v $PWD:/home/pptruser -w /home/pptruser -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY -e USER_A='<user-a>' -e USER_B='<user-b>' -e PASSWORD_A='<password-user-a>' -e PASSWORD_B='<password-user-b>' -e NUMBER_A='<number-user-a>' -e NUMBER_B='<number-user-b>' -e WEBSOCKET_URL='<your-websocket-url>' -e PLATFORM_URL= '<your-platform-url>' puppeteer-tests
 ```
 
 ### Without docker
